@@ -31,7 +31,7 @@ extern PGM_P sPrinterName;
 
 // FW_VERSION_UNKNOWN means this is an unofficial build.
 // The firmware should only be checked into github with this symbol.
-#define FW_DEV_VERSION FW_VERSION_UNKNOWN
+#define FW_DEV_VERSION FW_VERSION_GOLD
 #define FW_REPOSITORY "Unknown"
 #define FW_VERSION_FULL FW_VERSION "-" STR(FW_COMMIT_NR)
 
@@ -81,7 +81,7 @@ extern PGM_P sPrinterName;
 //#define STRING_VERSION "1.0.2"
 
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
-#define STRING_CONFIG_H_AUTHOR "(none, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(FrED Firmware, Logan V1.0)" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
 // This allows the connection of wireless adapters (for instance) to non-default port pins.
@@ -333,7 +333,7 @@ your extruder heater takes 2 minutes to hit the target on heating.
 
      // set the number of grid points per dimension
      // I wouldn't see a reason to go above 3 (=9 probing points on the bed)
-    #define AUTO_BED_LEVELING_GRID_POINTS 2
+    #define AUTO_BED_LEVELING_GRID_POINTS 3
 
 
   #else  // not AUTO_BED_LEVELING_GRID
@@ -352,8 +352,8 @@ your extruder heater takes 2 minutes to hit the target on heating.
 
   // these are the offsets to the probe relative to the extruder tip (Hotend - Probe)
   // X and Y offsets must be integers
-  #define X_PROBE_OFFSET_FROM_EXTRUDER -25
-  #define Y_PROBE_OFFSET_FROM_EXTRUDER -29
+  #define X_PROBE_OFFSET_FROM_EXTRUDER -23
+  #define Y_PROBE_OFFSET_FROM_EXTRUDER -5
   #define Z_PROBE_OFFSET_FROM_EXTRUDER -12.35
 
   #define Z_RAISE_BEFORE_HOMING 5       // (in mm) Raise Z before homing (G28) for Probe Clearance.
@@ -377,7 +377,7 @@ your extruder heater takes 2 minutes to hit the target on heating.
 //If you have enabled the Bed Auto Leveling and are using the same Z Probe for Z Homing,
 //it is highly recommended you let this Z_SAFE_HOMING enabled!
 
-  //#define Z_SAFE_HOMING   // This feature is meant to avoid Z homing with probe outside the bed area.
+  #define Z_SAFE_HOMING   // This feature is meant to avoid Z homing with probe outside the bed area.
                           // When defined, it will:
                           // - Allow Z homing only after X and Y homing AND stepper drivers still enabled
                           // - If stepper drivers timeout, it will need X and Y homing again before Z homing
@@ -458,10 +458,10 @@ your extruder heater takes 2 minutes to hit the target on heating.
 // M501 - reads parameters from EEPROM (if you need reset them after you changed them temporarily).
 // M502 - reverts to the default "factory settings".  You still need to store them in EEPROM afterwards if you want to.
 //define this to enable EEPROM support
-//#define EEPROM_SETTINGS
+#define EEPROM_SETTINGS
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
-//#define EEPROM_CHITCHAT
+#define EEPROM_CHITCHAT
 
 // Host Keepalive
 //

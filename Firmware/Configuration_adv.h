@@ -242,7 +242,7 @@
 	#endif
 
 // Enabe this option to get a pretty message whenever the endstop gets hit (as in the position at which the endstop got triggered)
-//#define VERBOSE_CHECK_HIT_ENDSTOPS
+#define VERBOSE_CHECK_HIT_ENDSTOPS
 
 // Enable the option to stop SD printing when hitting and endstops, needs to be enabled from the LCD menu when this option is enabled.
 //#define ABORT_ON_ENDSTOP_HIT_FEATURE_ENABLED
@@ -280,7 +280,7 @@
 #define LIN_ADVANCE
 
 #ifdef LIN_ADVANCE
-  #define LA_K_DEF    0        // Default K factor (Unit: mm compression per 1mm/s extruder speed)
+  #define LA_K_DEF    0.0921   // Default K factor (Unit: mm compression per 1mm/s extruder speed)
   #define LA_K_MAX    10       // Maximum acceptable K factor (exclusive, see notes in planner.cpp:plan_buffer_line)
   #define LA_LA10_MIN LA_K_MAX // Lin. Advance 1.0 threshold value (inclusive)
   //#define LA_FLOWADJ         // Adjust LA along with flow/M221 for uniform width
@@ -396,7 +396,7 @@ const unsigned int dropsegments=5; //everything with less than this number of st
 //#define FILAMENT_CHANGE_RESUME_ON_INSERT      // Automatically continue / load filament when runout sensor is triggered again.
 //#define PAUSE_REHEAT_FAST_RESUME              // Reduce number of waits by not prompting again post-timeout before continuing.
 
-//#define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
+#define PARK_HEAD_ON_PAUSE                    // Park the nozzle during pause and filament change.
 //#define HOME_BEFORE_FILAMENT_CHANGE           // If needed, home before parking for filament change
 
 //#define FILAMENT_LOAD_UNLOAD_GCODES           // Add M701/M702 Load/Unload G-codes, plus Load/Unload in the LCD Prepare menu.
